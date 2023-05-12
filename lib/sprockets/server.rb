@@ -169,9 +169,9 @@ module Sprockets
       def not_found_response(env)
         binding.pry
         if head_request?(env)
-          [ 404, { "content-type" => "text/plain", "content-length" => "0", "x-cascade" => "pass" }, [] ]
+          [ 404, { "Content-Type" => "text/plain", "Content-Length" => "0", "X-Cascade" => "pass" }, [] ]
         else
-          [ 404, { "content-type" => "text/plain", "content-length" => "9", "x-cascade" => "pass" }, [ "Not found" ] ]
+          [ 404, { "Content-Type" => "text/plain", "Content-Length" => "9", "X-Cascade" => "pass" }, [ "Not found" ] ]
         end
       end
 
