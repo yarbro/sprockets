@@ -147,6 +147,7 @@ module Sprockets
 
       # Returns a 400 Forbidden response tuple
       def bad_request_response(env)
+        binding.pry
         if head_request?(env)
           [ 400, { "content-type" => "text/plain", "content-length" => "0" }, [] ]
         else
@@ -156,6 +157,7 @@ module Sprockets
 
       # Returns a 403 Forbidden response tuple
       def forbidden_response(env)
+        binding.pry
         if head_request?(env)
           [ 403, { "content-type" => "text/plain", "content-length" => "0" }, [] ]
         else
@@ -165,6 +167,7 @@ module Sprockets
 
       # Returns a 404 Not Found response tuple
       def not_found_response(env)
+        binding.pry
         if head_request?(env)
           [ 404, { "content-type" => "text/plain", "content-length" => "0", "x-cascade" => "pass" }, [] ]
         else
